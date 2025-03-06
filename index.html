@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./assets/images/image.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.min.css">
+  <title>Spotify</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+  <div class="flex flex-col h-screen">
+    <!-- Header -->
+    <header class="flex items-center justify-between bg-gray-900 px-6 py-4 fixed top-0 w-full z-50">
+      <div class="flex items-center space-x-4">
+        <a href="./index.html"><img src="./assets/images/image.png" alt="logo" class="w-10 h-10"></a>
+        <div class="text-white text-lg font-bold">Spotify</div>
+        <input type="text" placeholder="¿Qué quieres reproducir?" class="bg-gray-700 text-sm text-white px-4 py-2 rounded-md outline-none placeholder-gray-400 w-40 sm:w-60 lg:w-80 hidden sm:block">
+      </div>
+      <div class="flex items-center space-x-4">
+        <button class="hover:text-blue-400 transition-colors"><i class="ri-notification-2-line"></i></button>
+        <button class="hover:text-blue-400 transition-colors"><i class="ri-download-2-fill"></i></button>
+        <div class="w-8 h-8 p-1 rounded-full bg-gray-600 hover:scale-110 hover:bg-blue-600 transition-transform">
+          <a href="./pages/perfil.html"><img src="./assets/images/user.png" alt="user" class="rounded-full"></a>
+        </div>
+      </div>
+    </header>
+
+    <div class="flex flex-1 mt-16">
+      <!-- Sidebar -->
+      <aside id="aside" class="aside__scroll xs:block sm:w-1/4 md:w-1/5 bg-gray-900 p-4 fixed top-16 h-full overflow-y-auto pb-40">
+        <!-- Botón de nav burger -->
+        <button id="burger-btn" class="sm:hidden bg-gray-800 text-white ml-1 p-3 mb-4 rounded-full">
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white"></span>
+        </button>
+        <h2 class="text-lg font-bold mb-6 hidden sm:flex">Tu biblioteca</h2>
+        <div class="flex space-x-2 mb-4 hidden lg:flex">
+          <button class="bg-gray-700 text-white py-2 px-4 md:py-1.5 md:px-3 text-xs rounded-md hover:bg-gray-600 transition-all">Listas</button>
+          <button class="bg-gray-700 text-white py-2 px-4 md:py-1.5 md:px-3 text-xs rounded-md hover:bg-gray-600 transition-all">Artistas</button>
+          <button class="bg-gray-700 text-white py-2 px-4 md:py-1.5 md:px-3 text-xs rounded-md hover:bg-gray-600 transition-all">Álbumes</button>
+        </div>
+        <ul class="space-y-4">
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <div class="w-10 h-10 rounded-md bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center text-white font-bold"><i class="ri-heart-3-fill"></i></div>
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">Canciones que te gustan</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">6 canciones</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <div class="w-10 h-10 rounded-md bg-gray-700 flex items-center justify-center"><i class="ri-folder-music-fill"></i></div>
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">Nueva carpeta</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">4 listas</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-md bg-gray-600" src="./assets/images/electtric.jpeg" alt="electric">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">electric bby</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Sencillo · rusowsky</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-full bg-gray-600" src="./assets/images/della1.webp" alt="dellafuente">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">DELLAFUENTE</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Artista</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-full bg-gray-600" src="./assets/images/saiko.webp" alt="saiko">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">SAIKO</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Artista</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-md bg-gray-600" src="./assets/images/cochecito.jpg" alt="cochecito">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">Cochecito</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Lista · Óscar Sánchez</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-full bg-gray-600" src="./assets/images/nicki.webp" alt="Nicki">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">Nicki Nicole</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Artista</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-full bg-gray-600" src="./assets/images/cupido.webp" alt="cupido">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">Cupido</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Artista</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-full bg-gray-600" src="./assets/images/macklemore.webp" alt="Macklemore">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">Macklemore</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Artista</p>
+            </div>
+          </li>
+        </ul>
+      </aside>
+
+  
+      <!-- Main -->
+      <main class="flex-1 bg-gradient-to-b from-gray-800 to-black ml-[16%] p-6 sm:ml-[25%] md:ml-[20%]">
+        <div class="flex flex-wrap space-x-2 mb-6">
+          <button class="bg-gray-700 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition-all">Todo</button>
+          <button class="bg-gray-700 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition-all">Música</button>
+          <button class="bg-gray-700 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition-all">Podcasts</button>
+        </div>
+
+        <!-- Horizontal Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+          <a href="./pages/artista.html"><div class="flex items-center bg-gray-700 p-3 rounded-md hover:bg-blue-600 transition-all">
+            <img src="./assets/images/exitos.jpeg" alt="Album Cover" class="w-12 h-12 rounded-md hover:scale-105 transition-transform">
+            <div class="ml-4">
+              <p class="font-bold text-sm">Éxitos España</p>
+            </div>
+            <img src="./assets/images/equaliser.png" alt="equalizer" class="ml-6 filter drop-shadow-lg">
+          </div></a>
+          <div class="flex items-center bg-gray-700 p-3 rounded-md hover:bg-gray-600 transition-all">
+            <img src="./assets/images/della.webp" alt="Album Cover" class="w-12 h-12 rounded-md hover:scale-105 transition-transform">
+            <div class="ml-4">
+              <p class="font-bold text-sm">Dellafuente</p>
+            </div>
+          </div>
+          <div class="flex items-center bg-gray-700 p-3 rounded-md hover:bg-gray-600 transition-all">
+            <img src="./assets/images/thisisfeid.jpg" alt="Album Cover" class="w-12 h-12 rounded-md hover:scale-105 transition-transform">
+            <div class="ml-4">
+              <p class="font-bold text-sm">This is feid</p>
+            </div>
+          </div>
+          <div class="flex items-center bg-gray-700 p-3 rounded-md hover:bg-gray-600 transition-all">
+            <img src="./assets/images/saiko.webp" alt="Album Cover" class="w-12 h-12 rounded-md hover:scale-105 transition-transform">
+            <div class="ml-4">
+              <p class="font-bold text-sm">SAIKO</p>
+            </div>
+          </div>
+          <div class="flex items-center bg-gray-700 p-3 rounded-md hover:bg-gray-600 transition-all">
+            <img src="./assets/images/camaron.jpeg" alt="Album Cover" class="w-12 h-12 rounded-md hover:scale-105 transition-transform">
+            <div class="ml-4">
+              <p class="font-bold text-sm">Camaron De La Isla</p>
+            </div>
+          </div>
+          <div class="flex items-center bg-gray-700 p-3 rounded-md hover:bg-gray-600 transition-all">
+            <img src="./assets/images/mora.jpeg" alt="Album Cover" class="w-12 h-12 rounded-md hover:scale-105 transition-transform">
+            <div class="ml-4">
+              <p class="font-bold text-sm">Mora</p>
+            </div>
+          </div>
+          <div class="flex items-center bg-gray-700 p-3 rounded-md hover:bg-gray-600 transition-all">
+            <img src="./assets/images/pegao.jpeg" alt="Album Cover" class="w-12 h-12 rounded-md hover:scale-105 transition-transform">
+            <div class="ml-4">
+              <p class="font-bold text-sm">PEGAO</p>
+            </div>
+          </div>
+          <div class="flex items-center bg-gray-700 p-3 rounded-md hover:bg-gray-600 transition-all">
+            <img src="./assets/images/rauw.jpeg" alt="Album Cover" class="w-12 h-12 rounded-md hover:scale-105 transition-transform">
+            <div class="ml-4">
+              <p class="font-bold text-sm">Rauw Alejandro</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección: Hecho para Oscar Sánchez Avellán -->
+        <section class="mb-12 mt-12">
+          <h3 class="text-xl font-bold mb-4 hover:underline hover:underline-offset-4">Hecho para ti</h3>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7  gap-6">
+            
+            <div class="bg-gray-700 rounded-lg p-4 hover:scale-105 transition-transform flex flex-col">
+              <img src="./assets/images/novedades.jpeg" alt="novedades" class="w-full rounded-lg mb-4">
+              <p class="text-gray-400 text-xs">Las novedades de los artistas que sigues</p>
+            </div>
+
+            <div class="bg-gray-700 rounded-lg p-4 hover:scale-105 transition-transform flex flex-col">
+              <img src="./assets/images/mix1.jpeg" alt="Mix Diario 1" class="w-full rounded-lg mb-4">
+              <p class="text-gray-400 text-xs">DELLAFUENTE, SALOMON SESSIONS, ...</p>
+            </div>
+
+            <div class="bg-gray-700 rounded-lg p-4 hover:scale-105 transition-transform flex flex-col">
+              <img src="./assets/images/mix2.jpeg" alt="Mix Diario 2" class="w-full rounded-lg mb-4">
+              <p class="text-gray-400 text-xs">Mora, Bad Bunny, Jhay Cortez y más</p>
+            </div>
+
+            <div class="bg-gray-700 rounded-lg p-4 hover:scale-105 transition-transform flex flex-col">
+              <img src="./assets/images/mix3.jpeg" alt="Mix Diario 3" class="w-full rounded-lg mb-4">
+              <p class="text-gray-400 text-xs">SAIKO, Cupido, Rauw Alejandro y más</p>
+            </div>
+
+            <div class="bg-gray-700 rounded-lg p-4 hover:scale-105 transition-transform flex flex-col">
+              <img src="./assets/images/mix4.jpeg" alt="Mix Diario 4" class="w-full rounded-lg mb-4">
+              <p class="text-gray-400 text-xs">Pilson, Maria Becerra, Nicki Nicole y más</p>
+            </div>
+
+            <div class="bg-gray-700 rounded-lg p-4 hover:scale-105 transition-transform flex flex-col">
+              <img src="./assets/images/mix5.jpeg" alt="Mix Diario 5" class="w-full rounded-lg mb-4">
+              <p class="text-gray-400 text-xs">YoGambii, Omar Courtz, Alvaro Díaz y más</p>
+            </div>
+
+            <div class="bg-gray-700 rounded-lg p-4 hover:scale-105 transition-transform flex flex-col">
+              <img src="./assets/images/mix6.jpeg" alt="Mix Diario 6" class="w-full rounded-lg mb-4">
+              <p class="text-gray-400 text-xs">Mesita, Luck Ra, Lenny Tavarez y más</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección: Escuchado Recientemente -->
+        <section class="mb-12 mt-12">
+          <h3 class="text-xl font-bold mb-4 hover:underline hover:underline-offset-4">Escuchado recientemente</h3>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-10">
+            
+            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-600 transition-all flex flex-col">
+              <img src="./assets/images/exitosbad.jpeg" alt="Exitos España" class="w-full rounded-lg mb-4 hover:scale-105 transition-transform">
+              <p class="font-bold text-sm mt-2">Éxitos España</p>
+              <p class="text-gray-400 text-xs">Los hits de ahora en la playlist más...</p>
+            </div>
+
+            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-600 transition-all flex flex-col">
+              <img src="./assets/images/thisisfeid.jpg" alt="This is feid" class="w-full rounded-lg mb-4 hover:scale-105 transition-transform">
+              <p class="font-bold text-sm mt-2">This is Feid</p>
+              <p class="text-gray-400 text-xs">This is Feid. Los temas essenciales...</p>
+            </div>
+
+            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-600 transition-all flex flex-col">
+              <img src="./assets/images/ferxxo.jpeg" alt="Feid" class="w-full rounded-full mb-4 hover:scale-105 transition-transform">
+              <p class="font-bold text-sm mt-2">Feid</p>
+              <p class="text-gray-400 text-xs">Artista</p>
+            </div>
+
+            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-600 transition-all flex flex-col">
+              <img src="./assets/images/morad.jpeg" alt="Morad" class="w-full rounded-full mb-4 hover:scale-105 transition-transform">
+              <p class="font-bold text-sm mt-2">Morad</p>
+              <p class="text-gray-400 text-xs">Artista</p>
+            </div>
+
+            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-600 transition-all flex flex-col">
+              <img src="./assets/images/electtric.jpeg" alt="electric bby" class="w-full rounded-lg mb-4 hover:scale-105 transition-transform">
+              <p class="font-bold text-sm mt-2">electric bby</p>
+              <p class="text-gray-400 text-xs">rusowsky, DELLAFUENTE</p>
+            </div>
+
+            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-600 transition-all flex flex-col">
+              <img src="./assets/images/camaron.jpeg" alt="Camaron De La Isla" class="w-full rounded-full mb-4 hover:scale-105 transition-transform">
+              <p class="font-bold text-sm mt-2">Camaron De La Isla</p>
+              <p class="text-gray-400 text-xs">Artista</p>
+            </div>
+
+            <div class="bg-gray-700 rounded-lg p-4 hover:bg-gray-600 transition-all flex flex-col">
+              <img src="./assets/images/daniyel.jpeg" alt="Daniyel" class="w-full rounded-full mb-4 hover:scale-105 transition-transform">
+              <p class="font-bold text-sm mt-2">Daniyel</p>
+              <p class="text-gray-400 text-xs">Artista</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  
+    <!-- Bottom Player -->
+    <footer class="bg-gray-900 px-6 py-4 fixed bottom-0 w-full flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <img src="./assets/images/feid.jpeg" alt="Song Cover" class="w-12 h-12 rounded-md">
+        <div>
+          <p class="font-bold text-sm">Estoy Putiao</p>
+          <p class="text-xs text-gray-400">Feid, Sky Rompiendo, Dei V</p>
+        </div>
+      </div>
+      <div class="flex items-center ml-2 space-x-3">
+        <button class="text-gray-400 hover:scale-110 transition-transform"><i class="ri-skip-back-line"></i></button>
+        <button id="play" class="text-white hover:scale-110 transition-transform">⏯</button>
+        <button class="text-gray-400 hover:scale-110 transition-transform"><i class="ri-skip-forward-line"></i></button>
+      </div>
+      <div class="flex-1 mx-4">
+        <input id="inputFooter" type="range" class="w-full">
+      </div>
+    </footer>
+  </div>
+  <script src="./js/script.js"></script>
+</body>
+</html>

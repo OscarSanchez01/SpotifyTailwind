@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./../assets/images/image.png">
+  <link rel="stylesheet" href="./../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.min.css">
+  <title>Spotify</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+  <div class="flex flex-col min-h-screen">
+    
+    <!-- Header -->
+    <header class="flex items-center justify-between bg-gray-900 px-6 py-4 fixed top-0 w-full z-50">
+      <div class="flex items-center space-x-4">
+        <a href="./../index.html"><img src="./../assets/images/image.png" alt="logo" class="w-10 h-10"></a>
+        <div class="text-white text-lg font-bold">Spotify</div>
+        <input type="text" placeholder="¿Qué quieres reproducir?" class="bg-gray-700 text-sm text-white px-4 py-2 rounded-md outline-none placeholder-gray-400 w-40 sm:w-60 lg:w-80 hidden sm:block">
+      </div>
+      <div class="flex items-center space-x-4">
+        <button class="hover:text-blue-400 transition-colors"><i class="ri-notification-2-line"></i></button>
+        <button class="hover:text-blue-400 transition-colors"><i class="ri-download-2-fill"></i></button>
+        <div class="w-8 h-8 p-1 rounded-full bg-gray-600 hover:scale-110 hover:bg-blue-600 transition-transform">
+          <a href="./perfil.html"><img src="./../assets/images/user.png" alt="user" class="rounded-full"></a>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Main -->
+    <main class="mt-6 pt-20 bg-gradient-to-b from-gray-800 to-black flex flex-col items-center align-center min-h-screen">
+        <div id="alertBox" class="mb-8 flex justify-between rounded-md py-4 px-8 bg-[#fff2b2]  text-[#7c620c]">
+            <p class="font-sans">¡NO! Compartas datos de registro con páginas externas a los contenidos de Spotify </p>
+            <button id="closeButton" class="font-bold ml-4">&#10005;</button>
+        </div>
+        <h1 class="text-2xl font-bold mb-6">Editar perfil</h1>
+        <form novalidate class="space-y-6 max-w-xl">
+            <!-- Username -->
+            <div>
+                <label class="block text-sm font-medium mb-2" for="username">Nombre de usuario</label>
+                <div class="flex items-center space-x-4">
+                    <input type="text" id="username" value="oscar2001" class="w-full bg-gray-800 text-white px-4 py-2 rounded-md outline-none border border-gray-700 focus:border-blue-500">
+                    <i class="hidden text-green-600 ri-check-line"></i>
+                    <i class="hidden text-red-600 ri-spam-2-line"></i>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label class="block text-sm font-medium mb-2" for="email">Correo electrónico</label>
+                <div class="flex items-center space-x-4">
+                    <input type="email" id="email" value="oscar2001@gmail.com" class="w-full bg-gray-800 text-white px-4 py-2 rounded-md outline-none border border-gray-700 focus:border-blue-500">
+                    <i class="hidden text-green-600 ri-check-line"></i>
+                    <i class="hidden text-red-600 ri-spam-2-line"></i>
+                </div>
+            </div>
+
+            <!-- DNI + TELEFONO -->
+            <div class="flex justify-between">
+                <!-- DNI -->
+                <div>
+                    <label class="block text-sm font-medium mb-2" for="dni">DNI</label>
+                    <div class="flex items-center space-x-4">
+                        <input type="text" id="dni" value="02xxxxxx-X" class="w-full bg-gray-800 text-white px-4 py-2 rounded-md outline-none border border-gray-700 focus:border-blue-500">
+                        <i class="hidden text-green-600 ri-check-line"></i>
+                        <i class="hidden text-red-600 ri-spam-2-line"></i>
+                    </div>
+                </div>
+                <!-- Telefono -->
+                <div>
+                    <label class="block text-sm font-medium mb-2" for="telefono">Telefono</label>
+                    <div class="flex items-center space-x-4">
+                        <input type="number" id="telefono" value="000000065" class="w-full bg-gray-800 text-white px-4 py-2 rounded-md outline-none border border-gray-700 focus:border-blue-500">
+                        <i class="hidden text-green-600 ri-check-line"></i>
+                        <i class="hidden text-red-600 ri-spam-2-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div>
+                <label class="block text-sm font-medium mb-2" for="password">Contraseña</label>
+                <div class="flex items-center space-x-4">
+                    <input type="password" id="password" placeholder="•••••••••••••" class="w-full bg-gray-800 text-white px-4 py-2 rounded-md outline-none border border-gray-700 focus:border-blue-500">
+                    <i class="hidden text-green-600 ri-check-line"></i>
+                    <i class="hidden text-red-600 ri-spam-2-line"></i>
+                </div>
+            </div>
+
+            <!-- Genero -->
+            <div>
+                <label class="block text-sm font-medium mb-2" for="gender">Sexo</label>
+                <div class="flex items-center space-x-4">
+                    <select id="gender" class="w-full bg-gray-800 text-white px-4 py-2 rounded-md outline-none border border-gray-700 focus:border-blue-500">
+                        <option value="Masculino" selected>Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <i class="hidden text-green-600 ri-check-line"></i>
+                    <i class="hidden text-red-600 ri-spam-2-line"></i>
+                </div>
+            </div>
+
+            <!-- Birthdate -->
+            <div class="flex space-x-4">
+                <div class="w-1/4">
+                    <label class="block text-sm font-medium mb-2" for="day">Día</label>
+                    <input type="number" id="day" value="01" class="w-full bg-gray-800 text-white px-4 py-2 rounded-md outline-none border border-gray-700 focus:border-blue-500">
+                </div>
+
+                <div class="w-2/4">
+                    <label class="block text-sm font-medium mb-2" for="month">Mes</label>
+                    <select id="month" class="w-full bg-gray-800 text-white px-4 py-2 rounded-md outline-none border border-gray-700 focus:border-blue-500">
+                        <option value="Enero">Enero</option>
+                        <option value="Febrero">Febrero</option>
+                        <option value="Marzo" selected>Marzo</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Mayo">Mayo</option>
+                        <option value="Junio">Junio</option>
+                        <option value="Julio">Julio</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Septiembre">Septiembre</option>
+                        <option value="Octubre">Octubre</option>
+                        <option value="Noviembre">Noviembre</option>
+                        <option value="Diciembre">Diciembre</option>
+                    </select>
+                </div>
+
+                <div class="w-1/4">
+                    <label class="block text-sm font-medium mb-2" for="year">Año</label>
+                    <div class="flex items-center space-x-4">
+                        <input type="number" id="year" value="2001" class="w-full bg-gray-800 text-white px-4 py-2 rounded-md outline-none border border-gray-700 focus:border-blue-500">
+                        <i class="hidden text-green-600 ri-check-line"></i>
+                        <i class="hidden text-red-600 ri-spam-2-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Country -->
+            <div>
+                <label class="block text-sm font-medium mb-2" for="country">País o región</label>
+                <input type="text" id="country" value="España" disabled class="w-full bg-gray-800 text-white px-4 py-2 rounded-md outline-none border border-gray-700">
+            </div>
+
+            <!-- Marketing Consent -->
+            <div class="flex items-start">
+                <input type="checkbox" id="marketing" class="h-5 w-5 text-blue-600 bg-gray-800 border-gray-700 rounded focus:ring-blue-500">
+                <label for="marketing" class="ml-3 text-sm font-medium">Compartir mis datos de registro con los proveedores de contenidos de Spotify para fines de marketing.</label>
+            </div>
+
+            <!-- Save Button -->
+            <div class="pb-12">
+                <button type="submit" class="mb-4 w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition-colors">Guardar perfil</button>
+            </div>
+        </form>
+        <div id="correctBox" class="hidden mb-8 text-green-200 shadow-inner rounded p-3 bg-green-600">
+            <p id="correctMessage" class="font-sans"></p>
+        </div>
+        <div id="incorrectBox" class="hidden mb-8 text-red-200 shadow-inner rounded p-3 bg-red-600">
+            <p id="incorrectMessage" class="font-sans"></p>
+        </div>
+    </main>
+  
+    <!-- Footer -->
+    <footer class="bg-gray-900 px-8 py-6 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white justify-items-center">
+          <div>
+            <a href="./../index.html"><img src="./../assets/images/image.png" alt="Spotify Logo" class="w-10 mb-4"></a>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-blue-400">Acerca de</a></li>
+              <li><a href="#" class="hover:text-blue-400">Empleo</a></li>
+              <li><a href="#" class="hover:text-blue-400">For the Record</a></li>
+            </ul>
+          </div>
+      
+          <div>
+            <h3 class="font-semibold mb-4">Comunidades</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-blue-400">Para artistas</a></li>
+              <li><a href="#" class="hover:text-blue-400">Desarrolladores</a></li>
+              <li><a href="#" class="hover:text-blue-400">Publicidad</a></li>
+              <li><a href="#" class="hover:text-blue-400">Inversores</a></li>
+              <li><a href="#" class="hover:text-blue-400">Proveedores</a></li>
+            </ul>
+          </div>
+      
+          <div>
+            <h3 class="font-semibold mb-4">Enlaces Útiles</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-blue-400">Asistencia</a></li>
+              <li><a href="#" class="hover:text-blue-400">Reproductor web</a></li>
+              <li><a href="#" class="hover:text-blue-400">App gratis para móvil</a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <!-- Línea divisoria -->
+        <div class="border-t border-gray-700 my-6"></div>
+      
+        <div class="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm space-y-4 md:space-y-0">
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-blue-400">Legal</a>
+            <a href="#" class="hover:text-blue-400">Centro de seguridad y privacidad</a>
+            <a href="#" class="hover:text-blue-400">Política de Privacidad</a>
+            <a href="#" class="hover:text-blue-400">Configuración de cookies</a>
+            <a href="#" class="hover:text-blue-400">Información sobre los anuncios</a>
+            <a href="#" class="hover:text-blue-400">Accesibilidad</a>
+          </div>
+      
+          <div class="flex space-x-4">
+            <a href="https://www.instagram.com/spotify" target="_blank" class="hover:text-blue-400"><i class="ri-instagram-line text-2xl"></i></a>
+            <a href="https://x.com/spotify" target="_blank" class="hover:text-blue-400"><i class="ri-twitter-x-line text-2xl"></i></a>
+            <a href="https://www.facebook.com/SpotifyEspana/?brand_redir=6243987495" target="_blank" class="hover:text-blue-400"><i class="ri-facebook-line text-2xl"></i></a>
+          </div>
+      
+          <div class="text-gray-400 text-xs mt-4 md:mt-0">
+            <span>España (Español)</span>
+          </div>
+        </div>
+      
+        <!-- Copyright -->
+        <div class="mt-6 text-gray-500 text-center text-xs">
+          &copy; 2024 Spotify AB
+        </div>
+      </footer>
+  </div>
+  <script src="./../js/validity.js"></script>
+</body>
+</html>

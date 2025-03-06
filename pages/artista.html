@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./../assets/images/image.png">
+  <link rel="stylesheet" href="./../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.min.css">
+  <title>Spotify</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+  <div class="flex flex-col h-screen">
+    <!-- Header -->
+    <header class="flex items-center justify-between bg-gray-900 px-6 py-4 fixed top-0 w-full z-50">
+      <div class="flex items-center space-x-4">
+        <a href="./../index.html"><img src="./../assets/images/image.png" alt="logo" class="w-10 h-10"></a>
+        <div class="text-white text-lg font-bold">Spotify</div>
+        <input type="text" placeholder="¿Qué quieres reproducir?" class="bg-gray-700 text-sm text-white px-4 py-2 rounded-md outline-none placeholder-gray-400 w-40 sm:w-60 lg:w-80 hidden sm:block">
+      </div>
+      <div class="flex items-center space-x-4">
+        <button class="hover:text-blue-400 transition-colors"><i class="ri-notification-2-line"></i></button>
+        <button class="hover:text-blue-400 transition-colors"><i class="ri-download-2-fill"></i></button>
+        <div class="w-8 h-8 p-1 rounded-full bg-gray-600 hover:scale-110 hover:bg-blue-600 transition-transform">
+          <a href="./perfil.html"><img src="./../assets/images/user.png" alt="user" class="rounded-full"></a>
+        </div>
+      </div>
+    </header>
+    
+    <div class="flex flex-1 mt-16">
+      <!-- Sidebar -->
+      <aside id="aside" class="aside__scroll xs:block sm:w-1/4 md:w-1/5 bg-gray-900 p-4 fixed top-16 h-full overflow-y-auto pb-40">
+        <!-- Botón de nav burger -->
+        <button id="burger-btn" class="sm:hidden bg-gray-800 text-white ml-1 p-3 mb-4 rounded-full">
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white"></span>
+        </button>
+        <h2 class="text-lg font-bold mb-6 hidden sm:flex">Tu biblioteca</h2>
+        <div class="flex space-x-2 mb-4 hidden lg:flex">
+          <button class="bg-gray-700 text-white py-2 px-4 md:py-1.5 md:px-3 text-xs rounded-md hover:bg-gray-600 transition-all">Listas</button>
+          <button class="bg-gray-700 text-white py-2 px-4 md:py-1.5 md:px-3 text-xs rounded-md hover:bg-gray-600 transition-all">Artistas</button>
+          <button class="bg-gray-700 text-white py-2 px-4 md:py-1.5 md:px-3 text-xs rounded-md hover:bg-gray-600 transition-all">Álbumes</button>
+        </div>
+        <ul class="space-y-4">
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <div class="w-10 h-10 rounded-md bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center text-white font-bold"><i class="ri-heart-3-fill"></i></div>
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">Canciones que te gustan</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">6 canciones</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <div class="w-10 h-10 rounded-md bg-gray-700 flex items-center justify-center"><i class="ri-folder-music-fill"></i></div>
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">Nueva carpeta</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">4 listas</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-md bg-gray-600" src="./../assets/images/electtric.jpeg" alt="electric">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">electric bby</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Sencillo · rusowsky</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-full bg-gray-600" src="./../assets/images/della1.webp" alt="dellafuente">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">DELLAFUENTE</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Artista</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-full bg-gray-600" src="./../assets/images/saiko.webp" alt="saiko">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">SAIKO</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Artista</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-md bg-gray-600" src="./../assets/images/cochecito.jpg" alt="cochecito">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">Cochecito</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Lista · Óscar Sánchez</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-full bg-gray-600" src="./../assets/images/nicki.webp" alt="Nicki">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">Nicki Nicole</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Artista</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-full bg-gray-600" src="./../assets/images/cupido.webp" alt="cupido">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">Cupido</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Artista</p>
+            </div>
+          </li>
+          <li class="flex items-center space-x-4 hover:bg-gray-800 p-2 rounded-md transition-all">
+            <img class="w-10 h-10 rounded-full bg-gray-600" src="./../assets/images/macklemore.webp" alt="Macklemore">
+            <div>
+              <p class="font-bold text-sm hidden sm:flex">Macklemore</p>
+              <p class="text-gray-400 text-xs hidden sm:flex">Artista</p>
+            </div>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main -->
+      <main class="flex-1 bg-gradient-to-b from-gray-800 to-black ml-[16%] p-6 sm:ml-[25%] md:ml-[20%]">
+            <div class="flex items-center gap-4 mb-6">
+                <img src="./../assets/images/exitosbad.jpeg" alt="Playlist Cover" class="w-36 h-36 rounded-md object-cover">
+                <div>
+                    <h2 class="text-4xl font-bold">Éxitos España</h2>
+                    <p class="mt-2 text-gray-400">Los hits de ahora en la playlist más grande de España. Feat. Bad Bunny</p>
+                    <p class="mt-1 text-sm text-gray-400">Guardada 3,125,766 veces • 50 canciones • 2 h 30 min aproximadamente</p>
+                </div>
+            </div>
+    
+            <!-- Table -->
+            <div class="overflow-x-auto">
+                <table class="table-auto w-full text-left border-collapse mb-16">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="py-3 px-4 w-16 text-center text-gray-400">#</th>
+                            <th class="py-3 px-4 text-gray-400">Título</th>
+                            <th class="py-3 px-4 text-gray-400 hidden sm:table-cell">Álbum</th>
+                            <th class="py-3 px-4 text-gray-400 hidden lg:table-cell">Fecha añadida</th>
+                            <th class="py-3 px-4 w-24 text-gray-400 text-right"><i class="ri-time-line"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">1</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/elclub.jpeg" alt="elclub" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">EL CLúB</p>
+                                <p class="text-gray-400 text-sm"><i class="ri-movie-line"></i> Vídeo musical · Bad Bunny</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">EL CLúB</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">3:42</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">2</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/cano.jpeg" alt="cano" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">Se Pone Las Nike</p>
+                                <p class="text-gray-400 text-sm">Cano</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">Triana</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">2:39</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">3</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/rvfv.jpeg" alt="rvfv" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">Hm Hm Hm - Remix</p>
+                                <p class="text-gray-400 text-sm">Rvfv, Youka, Wesh Music</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">Hm Hm Hm (Remix)</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">3:01</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">4</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/IA.jpeg" alt="IA" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">IA</p>
+                                <p class="text-gray-400 text-sm">Clarent, Mora</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">IA</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">4:00</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">5</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/rauwalbum.jpeg" alt="Khé?" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">Khé?</p>
+                                <p class="text-gray-400 text-sm">Rauw Alejandro, Romeo Santos</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">Khé?</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">3:26</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">6</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/badgyal.jpeg" alt="2AM" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">2AM</p>
+                                <p class="text-gray-400 text-sm">Sebastian Yatra, Bad Gyal</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">2AM</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">3:16</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">7</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/migueltorres.jpeg" alt="DEGENERE" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">DEGENERE <span class="text-yellow-500">👑</span> (feat. benny blanco)</p>
+                                <p class="text-gray-400 text-sm">Myke Towers, benny blanco</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">DEGENERE</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">2:10</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">8</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/rauwalbum.jpeg" alt="Se Fue" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">Se Fue</p>
+                                <p class="text-gray-400 text-sm">Rauw Alejandro, Laura Pausini</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">Se Fue</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">4:01</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">9</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/quevedoalbum.jpeg" alt="SHIBATTO" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">SHIBATTO</p>
+                                <p class="text-gray-400 text-sm">Quevedo</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">BUENAS NOCHES</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">2:18</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">10</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/yose.jpeg" alt="Yo sé" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">Yo sé</p>
+                                <p class="text-gray-400 text-sm"><i class="ri-movie-line"></i> Vídeo musical · Yan Block, TORRES</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">Yo sé</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">2:09</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">11</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/quevedoalbum.jpeg" alt="GRAN VÍA" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">GRAN VÍA</p>
+                                <p class="text-gray-400 text-sm">Quevedo, Aitana</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">BUENAS NOCHES</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">3:33</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">12</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/jcreyes.jpeg" alt="STAR" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">STAR</p>
+                                <p class="text-gray-400 text-sm">JC Reyes</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">KM33</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">2:36</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">13</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/celine.jpeg" alt="Celine" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">Celine (with Kidd Keo)</p>
+                                <p class="text-gray-400 text-sm">Ghost Killer Track, Kidd Keo</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">Celine (with Kidd Keo)</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">2:56</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">14</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/cosas.jpeg" alt="Cosas Pendientes" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">Cosas Pendientes</p>
+                                <p class="text-gray-400 text-sm"><i class="ri-movie-line"></i> Vídeo musical · Maluma</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">Cosas Pendientes</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">3:04</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">15</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/lunallena.jpeg" alt="Luna llena" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">Luna llena</p>
+                                <p class="text-gray-400 text-sm">Beny Jr</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">Anti Social Cool Kid</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">2:49</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">16</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                                <img src="./../assets/images/feid.jpeg" alt="Estoy Putiao" class="h-10 w-10 rounded-md">
+                                <div>
+                                <p class="text-white">Estoy Putiao</p>
+                                <p class="text-gray-400 text-sm">Feid, Sky Rompiendo, Dei V</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">LOS 9 DE FERXXO Y SKY ROMPIENDO</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">3:43</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800">
+                            <td class="px-4 py-2 text-gray-400 text-center">17</td>
+                            <td class="px-4 py-2 flex items-center space-x-3">
+                              <img src="./../assets/images/manosrotas.jpeg" alt="Manos Rotas" class="h-10 w-10 rounded-md">
+                              <div>
+                                <p class="text-white">Manos Rotas</p>
+                                <p class="text-gray-400 text-sm">DELLAFUENTE, Morad</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-2 text-gray-400 hidden sm:table-cell">Manos Rotas</td>
+                            <td class="px-4 py-2 text-gray-400 hidden lg:table-cell">hace 4 días</td>
+                            <td class="px-4 py-2 text-gray-400 text-right">2:48</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+  
+    <!-- Bottom Player -->
+    <footer class="bg-gray-900 px-6 py-4 fixed bottom-0 w-full flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <img src="./../assets/images/feid.jpeg" alt="Song Cover" class="w-12 h-12 rounded-md" id="footerImage">
+        <div>
+          <p class="font-bold text-sm" id="footerTitle">Estoy Putiao</p>
+          <p class="text-xs text-gray-400" id="footerArtist">Feid, Sky Rompiendo, Dei V</p>
+        </div>
+      </div>
+      <div class="flex items-center ml-2 space-x-3">
+        <button class="text-gray-400 hover:scale-110 transition-transform"><i class="ri-skip-back-line"></i></button>
+        <button id="play" class="text-white hover:scale-110 transition-transform">⏯</button>
+        <button class="text-gray-400 hover:scale-110 transition-transform"><i class="ri-skip-forward-line"></i></button>
+      </div>
+      <div class="flex-1 mx-4">
+        <input id="inputFooter" type="range" class="w-full">
+      </div>
+    </footer>
+  </div>
+  <script src="./../js/script.js"></script>
+</body>
+</html>
